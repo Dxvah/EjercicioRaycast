@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Salto : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Rigidbody rb;
+    bool isGrounded;
     void Start()
     {
-        
+        rb.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Jump();
+
+        }
+    }
+    void Jump()
+    {
+        Vector3 origen = transform.position;
+        Vector3 direccion = transform.forward;
+        RaycastHit golpe;
+        if (Physics.Raycast(origen, direccion, out golpe))
+        {
+
+
+
+        }
+
+
+
     }
 }
